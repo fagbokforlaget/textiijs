@@ -16,7 +16,6 @@ Inverted index for text file.
 ### Installation
 
 via npm:
-
 ```
 $ npm install textiijs
 ```
@@ -34,6 +33,7 @@ var pii = new textii("./sample1.txt", null, function(err, data) {
 });
 
 pii.get();
+```
 
 #### With options and section given
 ```

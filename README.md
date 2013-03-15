@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/fagbokforlaget/textiijs.png)](https://travis-ci.org/fagbokforlaget/textiijs)
 
-Inverted index for text file.
+Text inverted index generator for node.
 
 * excludes "stop words"
 * normalize words with [porter-stemmer](https://github.com/jedp/porter-stemmer)

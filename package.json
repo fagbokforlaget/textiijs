@@ -1,6 +1,6 @@
 {
   "name": "textiijs",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Creates inverted index for words from text file",
   "main": "index.js",
   "scripts": {

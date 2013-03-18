@@ -1,20 +1,13 @@
-var textii = require('../index')
+var textii = require('textiijs'),
+    sample_text = "Zero, one and three or five, six, seven... seven...",
+    options = { "word_separator": /\W+/, "min_word_length": 3, "encoding": "utf8" },
+    get_options = { "section": "page1" };
 
-var options = {
-  "word_separator": /\W+/,
-  "min_word_length": 3,
-  "encoding": "utf8"
-}
-
-var pii = new textii("./sample1.txt", options, function(err, data) {
+var pii = new textii(sample_text, options, function(err, data) {
   if (err) {
     return console.log("Error: " + err);
   }
   console.log(data);
 });
-
-var get_options = {
-  "section": "page1"
-};
 
 pii.get(get_options);

@@ -1,6 +1,7 @@
-var textii = require('../index')
+var textii = require('textiijs'),
+    sample_text = "Zero, one and three or five, six, seven... seven...";
 
-var pii = new textii("./sample1.txt", null, function(err, data) {
+var pii = new textii(sample_text, null, function(err, data) {
   if (err) {
     return console.log("Error: " + err);
   }

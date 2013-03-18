@@ -23,7 +23,7 @@ $ npm install textiijs
 ### Usage
 #### No options and section given
 ```
-var textii = require('../index')
+var textii = require('textiijs')
 
 var pii = new textii("./sample1.txt", null, function(err, data) {
   if (err) {
@@ -37,7 +37,7 @@ pii.get();
 
 #### With options and section given
 ```
-var textii = require('../index')
+var textii = require('textiijs')
 
 var options = {
   "word_separator": /\W+/,

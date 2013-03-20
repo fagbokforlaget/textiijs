@@ -1,3 +1,5 @@
+require('./helpers/obj_equals');
+
 var assert = require("assert"),
     textii = require('../index'),
     sample_text = "Zero, one and three or five, six, seven... seven...\n" +

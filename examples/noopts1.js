@@ -4,9 +4,6 @@ var textii = require('../index'),
 
 var pii = new textii(sample_text);
 
-pii.get(null, function(err, data) {
-  if (err) {
-    return console.log("Error: " + err);
-  }
+pii.get(null, function(data) {
   console.log(data);
 });

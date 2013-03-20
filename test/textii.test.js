@@ -40,10 +40,7 @@ describe('textii', function() {
       it('should create reverted index without sections', function(done) {
         var tii = new textii(sample_text)
 
-        tii.get(null, function(err, data) {
-          if (err) {
-            throw err;
-          }
+        tii.get(null, function(data) {
           var expected = {
             "zero":[0], "three":[3], "five":[5], "six":[6], "seven":[7,8],
             "included":[18],
@@ -63,10 +60,7 @@ describe('textii', function() {
         var tii = new textii(sample_text),
             get_opts = {"section": "page"};
 
-        tii.get(get_opts, function(err, data) {
-          if (err) {
-            throw err;
-          }
+        tii.get(get_opts, function(data) {
           var expected = {
             "zero":{"page":[0]}, "three":{"page":[3]}, "five":{"page":[5]}, "six":{"page":[6]}, "seven":{"page":[7,8]},
             "included":{"page":[18]},

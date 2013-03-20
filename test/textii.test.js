@@ -13,7 +13,7 @@ describe('textii', function() {
     describe('when NO options given', function() {
 
       it('should set default options', function() {
-        var tii = new textii(sample_text, null, function() {});
+        var tii = new textii(sample_text, null);
         assert.equal(tii.default_options, tii.options);
       });
 
@@ -23,7 +23,7 @@ describe('textii', function() {
 
       it('should set merged options', function() {
         var opts = { "min_word_length": 1, "something": "else" },
-            tii = new textii(sample_text, opts, function() {});
+            tii = new textii(sample_text, opts);
         assert.equal(1, tii.options.min_word_length);
         assert.equal(tii.default_options.word_separator, tii.options.word_separator);
         assert.equal("else", tii.options.something);
@@ -38,7 +38,9 @@ describe('textii', function() {
     describe('section name NOT given', function() {
 
       it('should create reverted index without sections', function(done) {
-        var tii = new textii(sample_text, null, function(err, data) {
+        var tii = new textii(sample_text)
+
+        tii.get(null, function(err, data) {
           if (err) {
             throw err;
           }
@@ -48,10 +50,9 @@ describe('textii', function() {
             "one":[19], "test":[21,22], "good":[24], "alwai":[25]
           };
           assert(expected.equals(data));
-
           done();
         });
-        tii.get();
+
       });
 
     });
@@ -59,7 +60,10 @@ describe('textii', function() {
     describe('section name given', function() {
 
       it('should create reverted index with section', function(done) {
-        var tii = new textii(sample_text, null, function(err, data) {
+        var tii = new textii(sample_text),
+            get_opts = {"section": "page"};
+
+        tii.get(get_opts, function(err, data) {
           if (err) {
             throw err;
           }
@@ -70,9 +74,7 @@ describe('textii', function() {
           };
           assert(expected.equals(data));
           done();
-        }),
-        get_opts = {"section": "page"};
-        tii.get(get_opts);
+        });
       });
 
     });

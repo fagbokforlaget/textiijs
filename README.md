@@ -16,48 +16,55 @@ Text inverted index generator for node.
 ### Installation
 
 via npm:
+
 ```
 $ npm install textiijs
 ```
 
 ### Usage
-#### No options and section given
+#### Neither options nor section given
+
 ```
 var textii = require('textiijs'),
     sample_text = "Zero, one and three or five, six, seven... seven...";
 
-var pii = new textii(sample_text, null, function(err, data) {
+var pii = new textii(sample_text);
+
+pii.get(null, function(err, data) {
   if (err) {
     return console.log("Error: " + err);
   }
   console.log(data);
 });
-
-pii.get();
 ```
 
 #### With options and section given
+
 ```
-var textii = require('textiijs'),
+// var textii = require('textiijs'),
+var textii = require('../index'),
     sample_text = "Zero, one and three or five, six, seven... seven...",
     options = { "word_separator": /\W+/, "min_word_length": 3, "encoding": "utf8" },
     get_options = { "section": "page1" };
 
-var pii = new textii(sample_text, options, function(err, data) {
+var pii = new textii(sample_text, options);
+
+pii.get(get_options, function(err, data) {
   if (err) {
     return console.log("Error: " + err);
   }
   console.log(data);
 });
-
-pii.get(get_options);
 ```
 
 ### Tests
+
 ```
 $ make test
 ```
+
 Coverage report
+
 ```
 $ make test-cov
 ```

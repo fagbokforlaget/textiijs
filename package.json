@@ -1,6 +1,6 @@
 {
   "name": "textiijs",
-  "version": "0.3.1",
+  "version": "0.4.0",
   "description": "Text inverted index creator",
   "main": "index.js",
   "scripts": {

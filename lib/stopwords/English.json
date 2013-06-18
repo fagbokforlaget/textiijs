@@ -1,5 +1,5 @@
-module.exports = {
-    stopwords: [
+{
+    "stopwords": [
         "a",
         "about",
         "above",
@@ -175,4 +175,4 @@ module.exports = {
         "yourself",
         "yourselves"
     ]
-};
+}

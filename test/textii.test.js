@@ -75,31 +75,31 @@ describe('textii', function() {
 
   });
 
-  describe('Stopworder', function() {
-    var Stopworder = require('../lib/stopworder');
+  describe('Stopwords', function() {
+    var Stopwords = require('../lib/stopwords');
 
     it('should return list of valid languages', function(done) {
-      assert.equal(Stopworder.LanguageList.length > 0, true);
+      assert.equal(Stopwords.LanguageList.length > 0, true);
       done();
     });
 
     it('should return array of stopwords for valid language', function(done) {
-      assert.equal(new Stopworder('English').stopwords.length > 0, true);
+      assert.equal(new Stopwords('English').stopwords.length > 0, true);
       done();
     });
 
     it('should return an empty array for non-valid language', function(done) {
-      assert.equal(new Stopworder('Unknown').stopwords.length, 0);
+      assert.equal(new Stopwords('Unknown').stopwords.length, 0);
       done();
     });
 
     it('should return true when word is in stopwords list', function(done) {
-      assert.equal(new Stopworder('English').check('and'), true);
+      assert.equal(new Stopwords('English').check('and'), true);
       done();
     });
 
     it('should return false when word is not in stopwords list', function(done) {
-      assert.equal(new Stopworder('English').check('norsk'), false);
+      assert.equal(new Stopwords('English').check('norsk'), false);
       done();
     });
 

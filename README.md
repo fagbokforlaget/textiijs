@@ -52,6 +52,20 @@ pii.get(get_options, function(data) {
 });
 ```
 
+### Command line usage
+
+```
+npm install textiijs -g
+```
+
+Then you can either pipe in data or provide a filename
+
+```sh
+echo "hello world" | textiijs  
+# or
+textiijs text.txt
+```
+
 ### Tests
 
 ```

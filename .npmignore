@@ -1,9 +1,3 @@
-.git*
-docs/
-examples/
-support/
+.npmignore
+.gitignore
 test/
-testing.js
-.DS_Store
-coverage.html
-lib-cov

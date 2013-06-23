@@ -1,0 +1,32 @@
+#!/usr/bin/env node
+
+var textii = require('../')
+var fs = require('fs')
+
+var filename = process.argv[2]
+if (filename) returnIndex(fs.readFileSync(filename).toString())
+else convertStdin()
+
+function convertStdin() {
+  // Start reading from stdin so we don't exit.
+  process.stdin.resume()
+
+  var chunks = []
+  process.stdin
+    .on('data', function(c) {
+      chunks.push(c)
+    })
+    .on('end', function() {
+      var buf = Buffer.concat(chunks)
+      returnIndex(buf.toString())
+    })
+  
+}
+
+
+function returnIndex(str) {
+  var pii = new textii(str)
+  pii.get(null, function(data) {
+    process.stdout.write(JSON.stringify(data, null, ' '))
+  })
+}
